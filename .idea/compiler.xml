@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="coupon-eureka-server" />
+        <module name="coupon-gateway" />
       </profile>
     </annotationProcessing>
   </component>
