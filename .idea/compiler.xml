@@ -9,6 +9,7 @@
         <module name="corn-common" />
         <module name="coupon-eureka-server" />
         <module name="coupon-gateway" />
+        <module name="coupon-template" />
       </profile>
     </annotationProcessing>
   </component>

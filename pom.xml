@@ -11,6 +11,7 @@
         <module>coupon-eureka-server</module>
         <module>coupon-gateway</module>
         <module>corn-common-service</module>
+        <module>coupon-template</module>
     </modules>
 
     <name>corn-coupon</name>
