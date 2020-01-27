@@ -10,6 +10,7 @@
     <modules>
         <module>coupon-eureka-server</module>
         <module>coupon-gateway</module>
+        <module>corn-common-service</module>
     </modules>
 
     <name>corn-coupon</name>

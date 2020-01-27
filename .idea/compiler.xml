@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="corn-common" />
         <module name="coupon-eureka-server" />
         <module name="coupon-gateway" />
       </profile>
