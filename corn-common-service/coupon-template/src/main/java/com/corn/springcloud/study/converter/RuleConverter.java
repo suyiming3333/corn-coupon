@@ -1,7 +1,7 @@
 package com.corn.springcloud.study.converter;
 
 import com.alibaba.fastjson.JSON;
-import com.imooc.coupon.vo.TemplateRule;
+import com.corn.springcloud.study.vo.TemplateRule;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

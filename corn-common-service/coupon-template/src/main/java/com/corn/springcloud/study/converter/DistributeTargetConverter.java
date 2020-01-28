@@ -1,6 +1,7 @@
 package com.corn.springcloud.study.converter;
 
-import com.imooc.coupon.constant.DistributeTarget;
+
+import com.corn.springcloud.study.constant.DistributeTarget;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

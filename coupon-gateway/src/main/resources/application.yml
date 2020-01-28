@@ -8,3 +8,20 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1:8000/eureka/
+
+
+zuul:
+  ##网关统一前缀
+  prefix: /corn
+  routes:
+    ##优惠券模板微服务路由配置
+    template:
+      ##该路径下的请求
+      path: /coupon-template/**
+      ##转发到以下这个服务区处理
+      serviceId: eureka-client-coupon-template
+      ##不过滤掉前缀，如请求 、corn/a/b 过滤掉前缀会变成 /a/b导致访问不到
+      strip-prefix: false
+  host:
+    connect-timeout-millis: 15000
+    socket-timeout-millis: 60000

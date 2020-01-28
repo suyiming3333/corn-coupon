@@ -83,7 +83,7 @@ public class CouponTemplate implements Serializable {
     private Integer count;
 
     /** 创建时间 */
-    @CreatedDate
+    @CreatedDate//监听器，自动注入创建时间
     @Column(name = "create_time", nullable = false)
     private Date createTime;
 

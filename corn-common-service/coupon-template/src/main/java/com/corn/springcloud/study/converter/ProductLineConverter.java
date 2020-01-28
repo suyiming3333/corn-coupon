@@ -1,6 +1,7 @@
 package com.corn.springcloud.study.converter;
 
-import com.imooc.coupon.constant.ProductLine;
+
+import com.corn.springcloud.study.constant.ProductLine;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
