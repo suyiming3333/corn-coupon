@@ -4,9 +4,9 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/corn-common-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/corn-common-service/corn-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/corn-common-service/coupon-distribution" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/corn-common-service/coupon-template" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/coupon-eureka-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/coupon-gateway" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/coupon-template" charset="UTF-8" />
   </component>
 </project>

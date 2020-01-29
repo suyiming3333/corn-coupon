@@ -55,7 +55,8 @@ public class BuildTemplateServiceImpl implements IBuildTemplateService {
         CouponTemplate template = requestToTemplate(request);
         template = templateDao.save(template);
 
-        // 根据优惠券模板异步生成优惠券码
+        // 根据优惠券模板异步生成优惠券码(预先生成优惠券code，并保存到redis)
+        //为什么要预生成，redis单线程，安全；相比于动态生成，容易去控制配额
         asyncService.asyncConstructCouponByTemplate(template);
 
         return template;
