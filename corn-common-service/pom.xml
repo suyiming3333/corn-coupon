@@ -15,6 +15,7 @@
         <module>corn-common</module>
         <module>coupon-template</module>
         <module>coupon-distribution</module>
+        <module>coupon-settlement</module>
     </modules>
     <packaging>pom</packaging>
 

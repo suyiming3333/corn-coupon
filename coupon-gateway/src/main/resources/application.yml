@@ -8,6 +8,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1:8000/eureka/
+  instance:
+    prefer-ip-address: true
+#    hostname: template.server.com
 
 
 zuul:

@@ -8,11 +8,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1:8000/eureka/
+  instance:
+    prefer-ip-address: true
 
 
 zuul:
   ##网关统一前缀
-#  prefix: /corn
+  prefix: /corn
   routes:
     ##优惠券模板微服务路由配置
     template:
