@@ -9,7 +9,8 @@ eureka:
     service-url:
       defaultZone: http://server1:8000/eureka/
   instance:
-    prefer-ip-address: true
+#    prefer-ip-address: true
+    hostname: gateway.corn.com
 
 
 zuul:
