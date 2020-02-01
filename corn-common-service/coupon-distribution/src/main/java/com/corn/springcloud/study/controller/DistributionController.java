@@ -84,14 +84,7 @@ public class DistributionController {
      * @return
      */
     @PostMapping("/distribution/settlement")
-    public SettlementInfo settlement(@RequestBody SettlementInfo info){
-        SettlementInfo settlementInfo = new SettlementInfo();
-        try {
-            settlementInfo = userService.settlement(info);
-        } catch (CouponException e) {
-            e.printStackTrace();
-        }finally {
-            return settlementInfo;
-        }
+    public SettlementInfo settlement(@RequestBody SettlementInfo info) throws CouponException {
+        return userService.settlement(info);
     }
 }

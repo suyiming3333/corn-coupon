@@ -10,7 +10,7 @@ eureka:
       defaultZone: http://server1:8000/eureka/
   instance:
     ##指定hostname或者设置ip-address为true可以处理网关无法以serviceId分发请求的问题
-#    prefer-ip-address: true
+    prefer-ip-address: true
     hostname: gateway.corn.com
 
 
@@ -26,6 +26,11 @@ zuul:
       serviceId: eureka-client-coupon-template
 #      url: http://127.0.0.1:7002
       ##不过滤掉前缀，如请求 、corn/a/b 过滤掉前缀会变成 /a/b导致访问不到
+      strip-prefix: false
+    ##优惠券分发领取服务路由
+    distribution:
+      path: /coupon-distribution/**
+      serviceId: eureka-client-coupon-distribution
       strip-prefix: false
   host:
     connect-timeout-millis: 15000

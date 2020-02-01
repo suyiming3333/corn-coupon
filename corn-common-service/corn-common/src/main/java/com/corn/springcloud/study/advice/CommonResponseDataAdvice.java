@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
@@ -14,9 +15,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @version V1.0
  * @Title: CommonResponseDataAdvice
  * @Package com.corn.springcloud.study.advice
- * @Description: 对controller的返回做增强处理
+ * @Description: 对restcontroller的返回做增强处理
  * @date 2020/1/27 21:38
  */
+@RestControllerAdvice
 public class CommonResponseDataAdvice implements ResponseBodyAdvice<Object> {
     /**
      * <h2>判断是否需要对响应进行处理</h2>

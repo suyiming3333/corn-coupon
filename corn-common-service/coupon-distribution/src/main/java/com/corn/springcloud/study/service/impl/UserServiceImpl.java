@@ -22,12 +22,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -161,7 +156,7 @@ public class UserServiceImpl implements IUserService {
 
         long curTime = new Date().getTime();
         List<CouponTemplateSDK> templateSDKS =
-                templateClient.findAllUsableTemplate().getData();
+                templateClient.findAllUsableTemplate(userId).getData();
 
         log.debug("Find All Template(From TemplateClient) Count: {}",
                 templateSDKS.size());
@@ -235,7 +230,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public Coupon acquireTemplate(AcquireTemplateRequest request)
             throws CouponException {
-        //根据id获取优惠券模板
+        //根据id获取优惠券模板(feign服务调用)
         Map<Integer, CouponTemplateSDK> id2Template =
                 templateClient.findIds2TemplateSDK(
                         Collections.singletonList(
@@ -331,9 +326,12 @@ public class UserServiceImpl implements IUserService {
                         Coupon::getId,
                         Function.identity()
                 ));
+
+        Collection c1 = id2Coupon.keySet();
+        Collection c2 = ctInfos.stream().map(SettlementInfo.CouponAndTemplateInfo::getId).collect(Collectors.toList());
         if (MapUtils.isEmpty(id2Coupon) || !CollectionUtils.isSubCollection(
-                ctInfos.stream().map(SettlementInfo.CouponAndTemplateInfo::getId)
-                .collect(Collectors.toList()), id2Coupon.keySet()
+                ctInfos.stream().map(SettlementInfo.CouponAndTemplateInfo::getId).collect(Collectors.toList()),
+                id2Coupon.keySet()
         )) {
             log.info("{}", id2Coupon.keySet());
             log.info("{}", ctInfos.stream()

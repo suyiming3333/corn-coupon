@@ -36,4 +36,12 @@ public interface CouponTemplateDao extends JpaRepository<CouponTemplate,Integer>
     List<CouponTemplate> findAllByExpired(Boolean expired);
 
 
+    /**
+     * 根据用户id获取可用的优惠券列表
+     * @param userId
+     * @return
+     */
+    List<CouponTemplate> findAllByAvailableAndExpiredAndUserId(Boolean available, Boolean expired,Long userId);
+
+
 }

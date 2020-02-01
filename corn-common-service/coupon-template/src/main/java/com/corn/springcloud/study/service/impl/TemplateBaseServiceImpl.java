@@ -64,6 +64,7 @@ public class TemplateBaseServiceImpl implements ITemplateBaseService {
                 .map(this::template2TemplateSDK).collect(Collectors.toList());
     }
 
+
     /**
      * <h2>获取模板 ids 到 CouponTemplateSDK 的映射</h2>
      * @param ids 模板 ids
@@ -80,6 +81,18 @@ public class TemplateBaseServiceImpl implements ITemplateBaseService {
                         CouponTemplateSDK::getId, Function.identity()
                 ));//Function.identity()代表该对象本身
     }
+
+    /**
+     * 根据用户id获取可用的优惠券模板列表
+     * **/
+    @Override
+    public List<CouponTemplateSDK> findAllUsableTemplateByUserId(Long userId) {
+        List<CouponTemplate> templates =
+                templateDao.findAllByAvailableAndExpiredAndUserId(
+                        true, false,userId);
+
+        return templates.stream()
+                .map(this::template2TemplateSDK).collect(Collectors.toList());    }
 
     /**
      * <h2>将 CouponTemplate 转换为 CouponTemplateSDK</h2>

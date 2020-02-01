@@ -35,4 +35,6 @@ public interface ITemplateBaseService {
      * @return Map<key: 模板 id， value: CouponTemplateSDK>
      * */
     Map<Integer, CouponTemplateSDK> findIds2TemplateSDK(Collection<Integer> ids);
+
+    List<CouponTemplateSDK> findAllUsableTemplateByUserId(Long userId);
 }

@@ -1,5 +1,6 @@
 package com.corn.springcloud.study.controller;
 
+import com.corn.springcloud.study.annotation.IgnoreResponseAdvice;
 import com.corn.springcloud.study.exception.CouponException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.Map;
  */
 @Slf4j
 @RestController
+@IgnoreResponseAdvice
 public class HealthCheck {
 
     /** 服务发现客户端 */

@@ -53,10 +53,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1:8000/eureka/
+    fetch-registry: true
   instance:
     prefer-ip-address: true
     hostname: distribution.corn.com
-
 logging:
   level:
     com.imooc.coupon: debug
@@ -64,12 +64,12 @@ logging:
 # feign 相关的配置
 feign:
   hystrix:
-    enabled: true   # Hystrix 默认是关闭的
+    enabled: false   # Hystrix 默认是关闭的
   client:
     config:
       default:  # 全局的
-        connectTimeout: 2000  # 默认的连接超时时间是 10s
-        readTimeout: 5000 #响应数据超五秒断开
+        connectTimeout: 20000  # 默认的连接超时时间是 10s
+        readTimeout: 50000 #响应数据超五秒断开
       eureka-client-coupon-template:  # 针对单独服务的配置
-        connectTimeout: 3000  # 默认的连接超时时间是 10s
-        readTimeout: 5000
+        connectTimeout: 30000  # 默认的连接超时时间是 10s
+        readTimeout: 50000

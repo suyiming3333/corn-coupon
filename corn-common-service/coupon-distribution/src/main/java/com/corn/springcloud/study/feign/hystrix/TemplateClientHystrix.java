@@ -25,7 +25,7 @@ public class TemplateClientHystrix implements TemplateClient {
      * <h2>查找所有可用的优惠券模板</h2>
      */
     @Override
-    public CommonResponse<List<CouponTemplateSDK>> findAllUsableTemplate() {
+    public CommonResponse<List<CouponTemplateSDK>> findAllUsableTemplate(Long userId) {
 
         log.error("[eureka-client-coupon-template] findAllUsableTemplate " +
                 "request error");
